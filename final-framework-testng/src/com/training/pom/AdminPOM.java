@@ -14,6 +14,9 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath="//a[@class='sign-in']")
+	private WebElement login;
+	
 	@FindBy(id="user_login")
 	private WebElement userName; 
 	
@@ -22,6 +25,10 @@ private WebDriver driver;
 	
 	@FindBy(name="login")
 	private WebElement loginBtn; 
+	
+	public void clickLogin(){
+		this.login.click();
+	}
 	
 	    public void sendUserName(String userName) {
 		this.userName.clear();

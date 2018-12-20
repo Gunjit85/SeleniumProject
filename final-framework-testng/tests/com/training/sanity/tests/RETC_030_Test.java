@@ -16,15 +16,17 @@ import org.testng.annotations.Test;
 import com.training.generics.ScreenShot;
 import com.training.pom.AdminPOM;
 import com.training.pom.LoginPOM;
-import com.training.pom.Test026_POM;
+import com.training.pom.Test027_POM;
+import com.training.pom.Test028_POM;
+import com.training.pom.Test030_POM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RETC_026_Test {
+public class RETC_030_Test {
 	private WebDriver driver;
 	private String baseUrl;
 	private AdminPOM loginPOM;
-	private Test026_POM testPOM;
+	private Test030_POM testPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
 
@@ -35,7 +37,7 @@ public class RETC_026_Test {
 		properties.load(inStream);
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new AdminPOM(driver); 
-		testPOM = new Test026_POM(driver);
+		testPOM = new Test030_POM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -54,26 +56,33 @@ public class RETC_026_Test {
 		}
 	
 	@Test(priority=2)
-    public void moveToTrashTest() throws InterruptedException{
+    public void deleteSelectedRegionTest() throws InterruptedException{
 		testPOM.clickProperties();
 		Thread.sleep(3000);
-		System.out.println("Properties Clicked");
-		testPOM.allProperties();
-		Thread.sleep(4000);
-		System.out.println("Allproperties clicked");
-		testPOM.clickcheckbox();
+		System.out.println("Properties clicked");
+		testPOM.clickRegions();
+		Thread.sleep(3000);
+		System.out.println("Regions clicked");
+		testPOM.enterText();
 		Thread.sleep(2000);
-		System.out.println("chkbox clicked");
-		testPOM.clickBulkActions();
+		System.out.println("User enters text in the search box");
+		testPOM.searchRegions();
 		Thread.sleep(2000);
-		System.out.println("bulk list clicked");
+		System.out.println("User clicked on search regions searchbox");
+		testPOM.checkCheckbox();
+		Thread.sleep(2000);
+		System.out.println("checkbox selected");
+		testPOM.deleteRegion();
+		Thread.sleep(2000);
+		System.out.println("Region selected");
 		testPOM.clickApply();
 		Thread.sleep(2000);
-		String actualOutput = testPOM.message();
-		Thread.sleep(2000);
-		System.out.println("text printed");
-		String expected = "1 post moved to the Trash. Undo";
-		assertEquals(actualOutput, expected);
+		System.out.println("Selected Region is deleted");
+		
+		String actOutput = testPOM.existingRegions();
+		
+		String expOutput = "Items deleted.";
+		assertEquals(actOutput, expOutput);
 		}
 	
 	@AfterClass
