@@ -16,6 +16,7 @@ public class GetConnection {
 	public static Connection getMySqlConnection(DBBean dbBean) {
 		
 		try {
+			//load
 			Class.forName(dbBean.getDriver());
 			connection = DriverManager.getConnection(dbBean.getUrl() , dbBean.getUserName(), dbBean.getPassword());
 			

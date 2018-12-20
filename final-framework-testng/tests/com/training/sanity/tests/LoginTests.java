@@ -38,6 +38,7 @@ public class LoginTests {
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
+		Thread.sleep(3000);
 	}
 	
 	@AfterMethod
