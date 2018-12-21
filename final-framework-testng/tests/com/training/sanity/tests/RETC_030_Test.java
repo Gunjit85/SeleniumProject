@@ -1,3 +1,9 @@
+/* Test case RETC030 - User logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties link, then click on Regions link, user searches "New Launches" in searchbox, click on search regions button, 
+ * Click on the checkbox of the property to be deleted, clicks on BulkActions listbox and selects Delete, click on Apply button,
+ * "Region deleted." Message should get displayed and selected region should be removed from the region list */
+
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
@@ -47,6 +53,7 @@ public class RETC_030_Test {
 	
 	@Test(priority=1)
 	public void adminLoginTest() throws InterruptedException {
+		//User logins as Admin
 		loginPOM.clickLogin();
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
@@ -57,28 +64,35 @@ public class RETC_030_Test {
 	
 	@Test(priority=2)
     public void deleteSelectedRegionTest() throws InterruptedException{
+		//User clicks the Properties link
 		testPOM.clickProperties();
 		Thread.sleep(3000);
 		System.out.println("Properties clicked");
+		//User clicks on Regions link
 		testPOM.clickRegions();
 		Thread.sleep(3000);
 		System.out.println("Regions clicked");
+		//User enters text in the search box
 		testPOM.enterText();
 		Thread.sleep(2000);
 		System.out.println("User enters text in the search box");
+		//User clicks on search regions button
 		testPOM.searchRegions();
 		Thread.sleep(2000);
 		System.out.println("User clicked on search regions searchbox");
+		//User selects the checkbox of the region to be deleted
 		testPOM.checkCheckbox();
 		Thread.sleep(2000);
 		System.out.println("checkbox selected");
+		//User selects Delete option in BulkActions listbox
 		testPOM.deleteRegion();
 		Thread.sleep(2000);
 		System.out.println("Region selected");
+		//User clicks on th eApply button
 		testPOM.clickApply();
 		Thread.sleep(2000);
 		System.out.println("Selected Region is deleted");
-		
+		//User takes actual result from existingRegions method
 		String actOutput = testPOM.existingRegions();
 		
 		String expOutput = "Items deleted.";

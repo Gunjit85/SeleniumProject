@@ -1,3 +1,9 @@
+/* Test case RETC028 - User logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties link, then click on Features link, Click on the checkbox of the tag to be deleted,
+ * go to BulkActions listbox and select Delete, click on Apply button, 
+ * "Items deleted." Message should get displayed and selected feature should be removed from the features list */
+
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
@@ -46,6 +52,7 @@ public class RETC_028_Test {
 	
 	@Test(priority=1)
 	public void adminLoginTest() throws InterruptedException {
+		//User logins as an admin
 		loginPOM.clickLogin();
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
@@ -56,24 +63,27 @@ public class RETC_028_Test {
 	
 	@Test(priority=2)
     public void deleteExistingFeatureTest() throws InterruptedException{
+		//User clicks on Properties link
 		testPOM.clickProperties();
 		Thread.sleep(3000);
 		System.out.println("Properties clicked");
+		//User clicks on Features link
 		testPOM.clickFeatures();
 		Thread.sleep(3000);
 		System.out.println("Features clicked");
+		//User clicks on the checkbox of the tag to be deleted
 		testPOM.checkCheckbox();
 		Thread.sleep(2000);
 		System.out.println("User checked the checkbox");
+		//User clicks on the bulk actions listbox and select 'Delete' option
 		testPOM.deleteFeature();
 		Thread.sleep(2000);
 		System.out.println("Delete selected in bulk actions listbox");
+		//User clicks on Apply button
 		testPOM.clickApply();
 		Thread.sleep(2000);
 		System.out.println("Apply button selected");
-		//driver.navigate().refresh();
-		//Thread.sleep(5000);
-		
+		//User takes the actual result from the exitingFeature() method
 		String actOutput = testPOM.existingFeature();
 		
 		String expOutput = "Items deleted.";

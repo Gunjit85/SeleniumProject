@@ -1,3 +1,10 @@
+/* Test case RETC026 - User logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties link, then click on AllProperties link, Click on the checkbox beside the Property details, 
+ * Click on Bulk Actions list box, Select valid credentials(Move to trash) in Bulk Actions list box
+ * Click on Apply button next to the listbox. Once it is done, "1 post moved to the Trash. Undo"  message 
+ * should get displayed along with property details should be removed from the properties details */
+
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
@@ -45,9 +52,10 @@ public class RETC_026_Test {
 	
 	@Test(priority=1)
 	public void adminLoginTest() throws InterruptedException {
-		loginPOM.clickLogin();
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+		//User logins as an admin
+		loginPOM.clickLogin(); 
+		loginPOM.sendUserName("admin"); 
+		loginPOM.sendPassword("admin@123"); 
 		loginPOM.clickLoginBtn(); 
 		Thread.sleep(2000);
 		screenShot.captureScreenShot("First");
@@ -55,25 +63,32 @@ public class RETC_026_Test {
 	
 	@Test(priority=2)
     public void moveToTrashTest() throws InterruptedException{
-		testPOM.clickProperties();
+		//method to click on Properties
+		testPOM.clickProperties();	
 		Thread.sleep(3000);
 		System.out.println("Properties Clicked");
-		testPOM.allProperties();
+		//method to click on AllProperties
+		testPOM.allProperties();	
 		Thread.sleep(4000);
 		System.out.println("Allproperties clicked");
-		testPOM.clickcheckbox();
+		//method to click checkbox of the first property listed
+		testPOM.clickcheckbox();	
 		Thread.sleep(2000);
 		System.out.println("chkbox clicked");
-		testPOM.clickBulkActions();
+		//method to click Bulk actions and Move to trash option
+		testPOM.clickBulkActions();	
 		Thread.sleep(2000);
 		System.out.println("bulk list clicked");
-		testPOM.clickApply();
+		//method to click Apply button
+		testPOM.clickApply();	
 		Thread.sleep(2000);
-		String actualOutput = testPOM.message();
+		//get the actual output message from the method message()
+		String actualOutput = testPOM.message();	
 		Thread.sleep(2000);
 		System.out.println("text printed");
-		String expected = "1 post moved to the Trash. Undo";
-		assertEquals(actualOutput, expected);
+		String expected = "1 post moved to the Trash. Undo";	
+		//assert expected and actual
+		assertEquals(actualOutput, expected);	
 		}
 	
 	@AfterClass
