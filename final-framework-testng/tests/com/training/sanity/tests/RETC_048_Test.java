@@ -1,15 +1,15 @@
-/* Test case RETC036 - Customer logins to the Retail application http://realestate.hommelle.com/
- * Credentials - username-sunil; password - sunil@123
- * Click on Villas tab, click on search button, Enter details of apartment in search box - Nullam hendrerit apartment,
- * Click on Nullam hendrerit apartment link, Click on Drop Us a Line Link, Enter valid details in Your Name textbox(selenium), 
- * Enter valid details in Your Email Address textbox(selenium@gmail.com) , Enter valid details in subject textbox(apartment), 
- * Enter valid details in message textbox(looking for apartment), Click on Send button, 
- * Thanks you for your message. It has been sent message should get displayed*/
+/* Test case RETC048 - Admin logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties tab, Click on Add New button, Click on Add new Region link in Regions section, Enter valid details in Textbox - Electronic City,
+ * Select valid details in Parent Region list box - West Bangalore, Click on Add New Region button, Click on Refresh button from keyboard,
+ * Enter valid credentials in Enter Title Here textbox - prestige, Enter valid credentials in textbox - home town, Click on checkbox beside created region,
+ * Click on Publish button, Post published. View post message should get displayed*/
 
 package com.training.sanity.tests;
 
 import static org.testng.Assert.assertEquals;
 
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -67,7 +67,7 @@ public class RETC_048_Test {
 		}
 	
 	@Test(priority=2)
-    public void addedPostDisplayedTest() throws InterruptedException{
+    public void addedPostDisplayedTest() throws InterruptedException, AWTException{
 		//String wait = properties.getProperty("implicitWait");
 		//Admin clicks on Properties link
 		testPOM.clickProperties();
@@ -96,9 +96,6 @@ public class RETC_048_Test {
 		//Admin refreshes the browser
 		testPOM.Refresh();
 		Thread.sleep(2000);
-		//driver.switchTo().defaultContent();
-		//driver.manage().window().maximize();
-		
 		System.out.println("Browser is refreshed");
 		//Admin enters text in Title textbox
 		testPOM.enterTitle();
@@ -125,12 +122,13 @@ public class RETC_048_Test {
 		//assert expected and actual
 		assertEquals(actualOutput, expected);	
 		}
-	
+	/*
 	@AfterClass
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
+	*/
 	
 	
 }

@@ -1,10 +1,8 @@
-/* Test case RETC036 - Customer logins to the Retail application http://realestate.hommelle.com/
- * Credentials - username-sunil; password - sunil@123
- * Click on Villas tab, click on search button, Enter details of apartment in search box - Nullam hendrerit apartment,
- * Click on Nullam hendrerit apartment link, Click on Drop Us a Line Link, Enter valid details in Your Name textbox(selenium), 
- * Enter valid details in Your Email Address textbox(selenium@gmail.com) , Enter valid details in subject textbox(apartment), 
- * Enter valid details in message textbox(looking for apartment), Click on Send button, 
- * Thanks you for your message. It has been sent message should get displayed*/
+/* Test case RETC042 - Admin logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Posts link, Click on Add New link, Enter Valid credentials in Enter title here textbox - New Launches_Dec28_4,
+ * Enter valid credentials in body textbox - New Launch in Home, Click on Publish button, Click on All Posts,
+ * Click on Post created (New Launches_Dec28_4) */
 
 package com.training.sanity.tests;
 
@@ -80,6 +78,7 @@ public class RETC_042_Test {
 		//Admin enters text in 'Body' textbox
 		testPOM.enterBodyText();
 		System.out.println("Text is added to 'Body' textbox");
+		Thread.sleep(5000);
 		//Admin clicks on 'Publish' button
 		testPOM.clickPublish();
 		//Thread.sleep(8000);
@@ -95,7 +94,7 @@ public class RETC_042_Test {
 		String actualOutput = testPOM.confirmationMessage();
 		Thread.sleep(3000);
 		
-		String expected = "New Launches";	
+		String expected = "New Launches_Dec28_4";	
 		//assert expected and actual
 		assertEquals(actualOutput, expected);	
 		}

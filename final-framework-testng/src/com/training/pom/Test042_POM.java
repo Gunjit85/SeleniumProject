@@ -1,10 +1,8 @@
-/* Locating all the WebElements for RETC036 - Customer logins to the Retail application http://realestate.hommelle.com/
- * Credentials - username-sunil; password - sunil@123
- * Click on Villas tab, click on search button, Enter details of apartment in search box - Nullam hendrerit apartment,
- * Click on Nullam hendrerit apartment link, Click on Drop Us a Line Link, Enter valid details in Your Name textbox(selenium), 
- * Enter valid details in Your Email Address textbox(selenium@gmail.com) , Enter valid details in subject textbox(apartment), 
- * Enter valid details in message textbox(looking for apartment), Click on Send button, 
- * Thanks you for your message. It has been sent message should get displayed*/
+/* Locating all the WebElements for RETC042 - Admin logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Posts  link, Click on Add New link, Enter Valid credentials in Enter title here textbox - New Launches_Dec28_4,
+ * Enter valid credentials in body textbox - New Launch in Home, Click on Publish button, Click on All Posts,
+ * Click on Post created (New Launches_Dec28_4) */
 
 package com.training.pom;
 
@@ -46,10 +44,10 @@ public class Test042_POM {
 	@FindBy(xpath = "//input[@id='publish']")
 	private WebElement publish;
 	//All Posts
-	@FindBy(linkText = "All Posts")
+	@FindBy(xpath = "//a[@class='wp-first-item current']")
 	private WebElement allPosts;
 	//post created
-	@FindBy(xpath = "//A[@class='row-title'][text()='New Launches'][text()='New Launches']/self::A")
+	@FindBy(xpath = "//*[text()='New Launches_Dec28_4']")
 	private WebElement postCreated;
 	//Message textbox
 	@FindBy(xpath="//textarea[@placeholder='Message']")
@@ -70,11 +68,11 @@ public class Test042_POM {
 		addNew.click();
 	}
 	public void enterTitle() {
-		//Enter Valid credentials in Enter title here textbox - New Launches
-		title.sendKeys("New Launches");
+		//Enter Valid credentials in Enter title here textbox - New Launches3456
+		title.sendKeys("New Launches_Dec28_4");
 	}
 	public void enterBodyText() {
-		//Enter valid credentials in body textbox - New Launch in Home
+		//Enter valid credentials in body textbox - New Launch in Home3456
 		text.click();
 		bodyText.sendKeys("New Launch in Home");	
 	}

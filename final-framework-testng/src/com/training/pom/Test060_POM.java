@@ -1,10 +1,12 @@
-/* Locating all the WebElements for RETC036 - Customer logins to the Retail application http://realestate.hommelle.com/
- * Credentials - username-sunil; password - sunil@123
- * Click on Villas tab, click on search button, Enter details of apartment in search box - Nullam hendrerit apartment,
- * Click on Nullam hendrerit apartment link, Click on Drop Us a Line Link, Enter valid details in Your Name textbox(selenium), 
- * Enter valid details in Your Email Address textbox(selenium@gmail.com) , Enter valid details in subject textbox(apartment), 
- * Enter valid details in message textbox(looking for apartment), Click on Send button, 
- * Thanks you for your message. It has been sent message should get displayed*/
+/* Locating all the WebElements for RETC060 - Customer logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties tab, Click on Add New link, Enter valid credentials in Enter Title Here textbox, Enter valid credentials in textbox,
+ * Enter valid credentials in Price Here textbox, Enter valid credentials in Price per sq. meter/sq. ft textbox, Click on Main Details tab,
+ * Enter valid credentials in Status textbox, Enter valid credentials in Location textbox, Enter valid credentials in Possession textbox,
+ * Click on Location tab, Enter valid credentials in Address textbox, Enter valid credentials in Google Maps Address textbox,
+ * Enter valid credentials in Latitude textbox, Enter valid credentials in Longitude textbox, Click on Details tab, 
+ * Enter valid credentials in Storage Room textbox, Click on Central Bangalore Checkbox, Click on checkbox beside  Feature of Features section,
+ * Click on checkbox beside  Region of Regions section, Click on Publish button, Post published. View post message should get displayed*/
 
 package com.training.pom;
 

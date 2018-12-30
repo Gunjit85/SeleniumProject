@@ -1,13 +1,15 @@
-/* Locating all the WebElements for RETC036 - Customer logins to the Retail application http://realestate.hommelle.com/
- * Credentials - username-sunil; password - sunil@123
- * Click on Villas tab, click on search button, Enter details of apartment in search box - Nullam hendrerit apartment,
- * Click on Nullam hendrerit apartment link, Click on Drop Us a Line Link, Enter valid details in Your Name textbox(selenium), 
- * Enter valid details in Your Email Address textbox(selenium@gmail.com) , Enter valid details in subject textbox(apartment), 
- * Enter valid details in message textbox(looking for apartment), Click on Send button, 
- * Thanks you for your message. It has been sent message should get displayed*/
+/* Locating all the WebElements for RETC048 - Admin logins to the Retail application http://realestate.hommelle.com/
+ * Credentials - username-admin; password - admin@123
+ * Click on Properties tab, Click on Add New button, Click on Add new Region link in Regions section, Enter valid details in Textbox - Electronic City,
+ * Select valid details in Parent Region list box - West Bangalore, Click on Add New Region button, Click on Refresh button from keyboard,
+ * Enter valid credentials in Enter Title Here textbox - prestige, Enter valid credentials in textbox - home town, Click on checkbox beside created region,
+ * Click on Publish button, Post published. View post message should get displayed*/
 
 package com.training.pom;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
@@ -57,10 +59,10 @@ public class Test048_POM {
 	@FindBy(xpath = "//textarea[@id='content']")
 	private WebElement bodyText;
 	//checkbox next to new region created
-	@FindBy(xpath = "(//*[text()=' Electronic City'])[1]")
+	@FindBy(xpath = "(//*[text()=' Elec City999'])[1]")
 	private WebElement checkbox;
 	//Publish button
-	@FindBy(xpath="//input[@id='publish']")
+	@FindBy(xpath="//INPUT[@id='publish']")
 	private WebElement publish;
 	//confirmation message
 	@FindBy(xpath="//div[@id='message']//p")
@@ -80,7 +82,7 @@ public class Test048_POM {
 	}
 	public void enterText() {
 		//Enter valid details in Textbox - Electronic City
-		textbox.sendKeys("Electronic City");
+		textbox.sendKeys("Elec City999");
 	}
 	public void selectParentRegion() {
 		// Select valid details in Parent Region list box - West Bangalore
@@ -103,7 +105,7 @@ public class Test048_POM {
 		//WebDriverWait w=new WebDriverWait(driver,100);
 		//w.until(ExpectedConditions. invisibilityOfElementLocated(title));
 
-		title.sendKeys("prestige");
+		title.sendKeys("prestige999");
 	}
 	public void enterBodyText() {
 		//Enter valid credentials in body textbox - home town
@@ -114,9 +116,14 @@ public class Test048_POM {
 		//Click on checkbox beside created region
 		checkbox.click();
 	}
-	public void clickPublish() {
+	public void clickPublish() throws AWTException, InterruptedException {
 		//Click on Publish button
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_PAGE_UP);
+		robot.keyRelease(KeyEvent.VK_PAGE_UP);
+
 		publish.click();
+		Thread.sleep(5000);
 	}
 	
 	public String confirmationMessage() {
