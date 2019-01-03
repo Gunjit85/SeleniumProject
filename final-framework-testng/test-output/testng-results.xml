@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="132052" started-at="2018-12-30T12:49:26Z" finished-at="2018-12-30T12:51:38Z">
+  <suite name="Default suite" duration-ms="97934" started-at="2019-01-03T10:12:40Z" finished-at="2019-01-03T10:14:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="132052" started-at="2018-12-30T12:49:26Z" finished-at="2018-12-30T12:51:38Z">
-      <class name="com.training.sanity.tests.RETC_054_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_054_Test@7823a2f9]" name="setUpBeforeClass" is-config="true" duration-ms="55912" started-at="2018-12-30T18:19:26Z" finished-at="2018-12-30T18:20:22Z">
+    <test name="Default test" duration-ms="97934" started-at="2019-01-03T10:12:40Z" finished-at="2019-01-03T10:14:18Z">
+      <class name="com.training.sanity.tests.RETC_048_Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="setUpBeforeClass" is-config="true" duration-ms="31850" started-at="2019-01-03T15:42:40Z" finished-at="2019-01-03T15:43:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="userAddedCommentTest()[pri:2, instance:com.training.sanity.tests.RETC_054_Test@7823a2f9]" name="userAddedCommentTest" duration-ms="34136" started-at="2018-12-30T18:20:22Z" finished-at="2018-12-30T18:20:56Z">
+        <test-method status="PASS" signature="adminLoginTest()[pri:1, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="adminLoginTest" duration-ms="12183" started-at="2019-01-03T15:43:12Z" finished-at="2019-01-03T15:43:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userAddedCommentTest -->
-        <test-method status="PASS" signature="AdminLoginTest()[pri:3, instance:com.training.sanity.tests.RETC_054_Test@7823a2f9]" name="AdminLoginTest" duration-ms="17964" started-at="2018-12-30T18:20:56Z" finished-at="2018-12-30T18:21:14Z">
+        </test-method> <!-- adminLoginTest -->
+        <test-method status="PASS" signature="addedPostDisplayedTest()[pri:2, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="addedPostDisplayedTest" duration-ms="53861" started-at="2019-01-03T15:43:24Z" finished-at="2019-01-03T15:44:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdminLoginTest -->
-        <test-method status="PASS" signature="adminRepliesToCommentTest()[pri:4, instance:com.training.sanity.tests.RETC_054_Test@7823a2f9]" name="adminRepliesToCommentTest" duration-ms="22130" started-at="2018-12-30T18:21:14Z" finished-at="2018-12-30T18:21:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- adminRepliesToCommentTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_054_Test@7823a2f9]" name="tearDown" is-config="true" duration-ms="1834" started-at="2018-12-30T18:21:36Z" finished-at="2018-12-30T18:21:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.RETC_054_Test -->
+        </test-method> <!-- addedPostDisplayedTest -->
+      </class> <!-- com.training.sanity.tests.RETC_048_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

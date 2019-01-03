@@ -68,67 +68,54 @@ public class RETC_048_Test {
 	
 	@Test(priority=2)
     public void addedPostDisplayedTest() throws InterruptedException, AWTException{
-		//String wait = properties.getProperty("implicitWait");
+		String wait = properties.getProperty("implicitWait");
 		//Admin clicks on Properties link
 		testPOM.clickProperties();
-		Thread.sleep(3000);
 		System.out.println("Properties Clicked");
 		//Admin clicks on 'Add New' button
 		testPOM.clickAddNew();
-		Thread.sleep(4000);
 		System.out.println("Add New button is clicked and Add Property page is displayed");
 		//Admin clicks on Add New Region link in Regions section
 		testPOM.clickAddNewRegion();
-		Thread.sleep(4000);
 		System.out.println("Add New Region is clicked");
 		//Admin enters text in textbox under Add New Region button
-		testPOM.enterText();
-		Thread.sleep(4000);
+		testPOM.enterText("Electronic City77");
 		System.out.println("Text is added to textbox");
 		//Admin selects Parent Region as West Bangalore
 		testPOM.selectParentRegion();
-		Thread.sleep(2000);
 		System.out.println("West Bangalore is selected");
 		//Admin clicks on 'Add new region' button
 		testPOM.clickAddNewRegionButton();
-		Thread.sleep(2000);
-		System.out.println("Region is added");
+		System.out.println("New Region is added");
 		//Admin refreshes the browser
 		testPOM.Refresh();
-		Thread.sleep(2000);
 		System.out.println("Browser is refreshed");
 		//Admin enters text in Title textbox
-		testPOM.enterTitle();
-		Thread.sleep(2000);
+		testPOM.enterTitle("prestige77");
 		System.out.println("Title is added");
 		//Admin enters text in Body textbox
 		testPOM.enterBodyText();
-		Thread.sleep(2000);
 		System.out.println("Body text is added");
 		//Admin clicks on checkbox beside the created region
 		testPOM.clickCheckbox();
-		Thread.sleep(2000);
 		System.out.println("Checkbox beside created region is clicked");
 		//Admin clicks on publish button
 		testPOM.clickPublish();
-		Thread.sleep(2000);
 		System.out.println("Publish is clicked");
 								
 		//get the actual output message from the text displayed in the title of added post recently
 		String actualOutput = testPOM.confirmationMessage();
-		Thread.sleep(3000);
 		
 		String expected = "Post published. View post";	
 		//assert expected and actual
 		assertEquals(actualOutput, expected);	
 		}
-	/*
+	
 	@AfterClass
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	*/
 	
 	
 }

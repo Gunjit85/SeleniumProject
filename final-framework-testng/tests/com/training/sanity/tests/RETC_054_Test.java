@@ -11,6 +11,8 @@ package com.training.sanity.tests;
 import static org.testng.Assert.assertEquals;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Time;
@@ -84,37 +86,29 @@ public class RETC_054_Test {
 	*/
 	@Test(priority=2)
     public void userAddedCommentTest() throws InterruptedException, AWTException{
-		//String wait = properties.getProperty("implicitWait");
+		String wait = properties.getProperty("implicitWait");
 		//User clicks on Blog link
 		userPOM.clickBlog();
-		Thread.sleep(3000);
 		System.out.println("Blog link is Clicked");
 		//User clicks on Read more link
 		userPOM.clickReadMore();
-		Thread.sleep(4000);
 		System.out.println("Read more link of the post added by admin is clicked");
 		//User adds comment to the post
-		userPOM.addComment();
-		Thread.sleep(4000);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		userPOM.addComment("real estate TC num 054_1");
 		System.out.println("Comment is added");
 		//User adds name and email
 		userPOM.addNameEmail();
-		Thread.sleep(4000);
 		System.out.println("Name and email is added");
-				
 		//Click on post comment button
 		userPOM.clickPostComment();
 		Thread.sleep(4000);
 		System.out.println("Post comment button is clicked");
-		
-		//Click on down arrow next to name of user
-		//userPOM.clickDownArrow();
-		//Thread.sleep(4000);
-		//System.out.println("down arrow is clicked");
 								
 		//get the actual output message from the text displayed in the recently added comment
 		String actualOutput = userPOM.confirmationMessage();
-		Thread.sleep(3000);
 		
 		String expected = "real estate TC num 054_1";	
 		//assert expected and actual
@@ -123,18 +117,15 @@ public class RETC_054_Test {
 
 	@Test(priority=3)
 	public void AdminLoginTest() throws InterruptedException {
+		String wait1 = properties.getProperty("implicitWait");
 		adminLoginPOM = new AdminPOM(driver); 
 		adminPOM = new Test054_POM2(driver);
 		adminUrl = properties.getProperty("adminURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		((JavascriptExecutor) driver).executeScript("window.open(arguments[0])", adminUrl);
-		Thread.sleep(3000);
 		System.out.println("New window opens for Admin Login");
 		//User login as Admin
-		Thread.sleep(5000);
-		//WebDriverWait wait = new WebDriverWait(driver, 20);
-		//WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='sign-in']")));
 		ArrayList<String>  wins=new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(wins.get(1));
 		
@@ -142,32 +133,26 @@ public class RETC_054_Test {
 		adminLoginPOM.sendUserName("admin"); 
 		adminLoginPOM.sendPassword("admin@123"); 
 		adminLoginPOM.clickLoginBtn(); 
-		Thread.sleep(2000);
 	}
 	
 	@Test(priority=4)
     public void adminRepliesToCommentTest() throws InterruptedException, AWTException{
-		//String wait = properties.getProperty("implicitWait");
+		String wait = properties.getProperty("implicitWait");
 		//Admin clicks on Dashboard link
 		adminPOM.clickDashboard();
-		Thread.sleep(3000);
 		System.out.println("Dashboard is Clicked");
 		//Admin hovers over the added comment and click on Reply icon
 		adminPOM.clickReply();
-		Thread.sleep(4000);
 		System.out.println("Reply icon is clicked");
 		//Admin adds reply in the texbox
-		adminPOM.addReply();
-		Thread.sleep(4000);
+		adminPOM.addReply("thanks");
 		System.out.println("Reply text is added");
 		//Admin clicks on Reply button
 		adminPOM.clickReplyButton();
-		Thread.sleep(4000);
 		System.out.println("Reply button is clicked");
 		
 		//get the actual output message from the text displayed in the recently added reply
 		String actualOutput = adminPOM.confirmationMessage();
-		Thread.sleep(3000);
 		
 		String expected = "thanks";	
 		//assert expected and actual

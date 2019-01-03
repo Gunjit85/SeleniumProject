@@ -33,7 +33,7 @@ public class Test054_POM {
 	private WebElement blog;
 	
 	//Read More link of 'New Launches_Dec28_3'
-	@FindBy(xpath="//A[@href='http://realestate.hommelle.com/new-launches_dec28_3/']/self::A")
+	@FindBy(xpath="//A[@href='http://realestate.hommelle.com/new-launches_dec28_5/']/self::A")
 	private WebElement readMore;
 	
 	//Comment textbox
@@ -62,38 +62,26 @@ public class Test054_POM {
 */
 	public void clickBlog() {
 		//click on Blog tab
-		blog.click();	
+		this.blog.click();	
 	}
 	public void clickReadMore() {
 		//click on 'Read More' link of the post added by admin - 'New Launches_Dec28_3'
-		readMore.click();
+		this.readMore.click();
 	}
-	public void addComment() throws AWTException {
+	public void addComment(String comment) throws AWTException {
 		//Enter valid details in Comment textbox - real estate TC num 054
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-
-		comment.sendKeys("real estate TC num 054_1");
+		
+		this.comment.sendKeys(comment);
 	}
 	public void addNameEmail() {
 		//Enter valid details in name and email
-		name.sendKeys("sunil");
-		email.sendKeys("sunil@gmail.com");
+		this.name.sendKeys("sunil");
+		this.email.sendKeys("sunil@gmail.com");
 	}
-
 	public void clickPostComment() {
 		//Click on Post Comment button
-		postComment.click();
+		this.postComment.click();
 	}
-	/*public void clickDownArrow() {
-		//Click on Post Comment button
-		/*Actions actions = new Actions(driver);
-		actions.moveToElement(downArrow).click().perform();
-	
-		downArrow.click();
-		}
-*/
 	public String confirmationMessage() {
 		// get the text of the added comment
 		String expected = addedComment.getText();

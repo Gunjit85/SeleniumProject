@@ -59,7 +59,7 @@ public class Test048_POM {
 	@FindBy(xpath = "//textarea[@id='content']")
 	private WebElement bodyText;
 	//checkbox next to new region created
-	@FindBy(xpath = "(//*[text()=' Elec City999'])[1]")
+	@FindBy(xpath = "(//*[text()=' Electronic City77'])[1]")
 	private WebElement checkbox;
 	//Publish button
 	@FindBy(xpath="//INPUT[@id='publish']")
@@ -70,19 +70,19 @@ public class Test048_POM {
 		
 	public void clickProperties() {
 		//click on Properties link
-		properties.click();	
+		this.properties.click();	
 	}
 	public void clickAddNew() {
 		//click on 'Add New' button next to Properties
-		addNew.click();
+		this.addNew.click();
 	}
 	public void clickAddNewRegion() {
 		//Click on Add new Region link in Regions section
-		addNewRegion.click();
+		this.addNewRegion.click();
 	}
-	public void enterText() {
+	public void enterText(String textbox) {
 		//Enter valid details in Textbox - Electronic City
-		textbox.sendKeys("Elec City999");
+		this.textbox.sendKeys(textbox);
 	}
 	public void selectParentRegion() {
 		// Select valid details in Parent Region list box - West Bangalore
@@ -91,39 +91,30 @@ public class Test048_POM {
 	}
 	public void clickAddNewRegionButton() {
 		//Click on Add New Region button
-		addNewRbutton.click();
+		this.addNewRbutton.click();
 	}
 	public void Refresh() throws InterruptedException {
 		//Refresh the browser
 		driver.navigate().refresh();
 		Thread.sleep(5000);
 	}
-	public void enterTitle() {
+	public void enterTitle(String title) {
 		//Enter valid credentials in Enter Title Here textbox - prestige
-		//Actions actions = new Actions(driver);
-		//actions.moveToElement(title);
-		//WebDriverWait w=new WebDriverWait(driver,100);
-		//w.until(ExpectedConditions. invisibilityOfElementLocated(title));
-
-		title.sendKeys("prestige999");
+		this.title.sendKeys(title);
 	}
 	public void enterBodyText() {
 		//Enter valid credentials in body textbox - home town
-		text.click();
+		this.text.click();
 		bodyText.sendKeys("home town");	
 	}
 	public void clickCheckbox() {
 		//Click on checkbox beside created region
-		checkbox.click();
+		this.checkbox.click();
 	}
 	public void clickPublish() throws AWTException, InterruptedException {
 		//Click on Publish button
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_PAGE_UP);
-		robot.keyRelease(KeyEvent.VK_PAGE_UP);
-
-		publish.click();
-		Thread.sleep(5000);
+		this.publish.sendKeys(Keys.ARROW_UP);
+		this.publish.click();
 	}
 	
 	public String confirmationMessage() {

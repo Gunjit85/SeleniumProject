@@ -57,21 +57,21 @@ public class Test054_POM2 {
 			
 	public void clickDashboard() {
 		//click on Dashboard tab
-		dashboard.click();	
+		this.dashboard.click();	
 	}
 	public void clickReply() {
 		//mouse over the comment added by user recently and click on Reply 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(comment).click().perform();
-		reply.click();
+		this.reply.click();
 	}
-	public void addReply(){
+	public void addReply(String addReply){
 		//enter valid details in comments textbox
-		addReply.sendKeys("thanks");
+		this.addReply.sendKeys(addReply);
 	}
 	public void clickReplyButton() {
 		//Click on Reply button
-		replyButton.click();
+		this.replyButton.click();
 	}
 	public String confirmationMessage() {
 		// get the text of the added reply to comment

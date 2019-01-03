@@ -73,15 +73,14 @@ public class RETC_042_Test {
 		testPOM.clickAddNew();
 		System.out.println("Add New link is clicked and Add New Post page is displayed");
 		//Admin enters text in 'Title here' textbox
-		testPOM.enterTitle();	
+		testPOM.enterTitle("New Launches_Dec28_5");	
 		System.out.println("Title is added");
 		//Admin enters text in 'Body' textbox
-		testPOM.enterBodyText();
+		testPOM.enterBodyText("New Launch in Home");
 		System.out.println("Text is added to 'Body' textbox");
 		Thread.sleep(5000);
 		//Admin clicks on 'Publish' button
 		testPOM.clickPublish();
-		//Thread.sleep(8000);
 		System.out.println("Publish button is clicked. Post published. View post message is displayed");
 		//Admin clicks on 'All Posts' link
 		testPOM.clickAllPosts();
@@ -92,9 +91,8 @@ public class RETC_042_Test {
 								
 		//get the actual output message from the text displayed in the title of added post recently
 		String actualOutput = testPOM.confirmationMessage();
-		Thread.sleep(3000);
 		
-		String expected = "New Launches_Dec28_4";	
+		String expected = "New Launches_Dec28_5";	
 		//assert expected and actual
 		assertEquals(actualOutput, expected);	
 		}
@@ -104,8 +102,4 @@ public class RETC_042_Test {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	
-	
 }
-
-

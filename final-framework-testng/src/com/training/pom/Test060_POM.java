@@ -106,97 +106,90 @@ public class Test060_POM {
 		
 	public void clickProperties() {
 		//click on Properties link
-		properties.click();	
+		this.properties.click();	
 	}
 	public void clickAddNew() {
 		//click on 'Add New' button next to Properties
-		addNew.click();
+		this.addNew.click();
 	}
-	public void enterTitle() {
+	public void enterTitle(String title) {
 		//Enter valid credentials in Enter Title Here textbox - new launch
-		title.sendKeys("new launch123");
+		this.title.sendKeys(title);
 	}
 	public void enterBodyText() {
 		//Enter valid credentials in body textbox - new launch
-		text.click();
-		bodyText.sendKeys("new launch123");	
+		this.text.click();
+		this.bodyText.sendKeys("new launch123");	
 	}
-	public void enterPrice() {
+	public void enterPrice(double p) {
 		//Enter valid credentials in Price Here textbox - 50000.00
-		double p = 70000.00;
-		price.sendKeys(String.valueOf(p));
+		//double p = 70000.00;
+		this.price.sendKeys(String.valueOf(p));
 	}
-	public void enterPricePerSqft() {
+	public void enterPricePerSqft(double p1) {
 		//Enter valid credentials in Price per sq. meter/sq. ft textbox
-		double p = 300.00;
-		pricePerSqft.sendKeys(String.valueOf(p));
+		//double p = 300.00;
+		this.pricePerSqft.sendKeys(String.valueOf(p1));
 	}
 	public void clickMainDetails() {
 		//Click on Main Details tab
-		mainDetails.click();
+		this.mainDetails.click();
 	}
-	public void enterStatus() {
+	public void enterStatus(String status) {
 		//Enter valid credentials in Status textbox - New
-		status.sendKeys("New");
+		this.status.sendKeys(status);
 	}
-	public void enterLocation() {
+	public void enterLocation(String location) {
 		//Enter valid credentials in Location textbox - Electronic city
-		location.sendKeys("Electronic city");
+		this.location.sendKeys(location);
 	}
-	public void enterPossessionDetails() {
+	public void enterPossessionDetails(String possession) {
 		//Enter valid credentials in Possession textbox - immediate
-		possession.sendKeys("immediate");
+		this.possession.sendKeys(possession);
 	}
 	public void clickLocationTab() {
 		//Click on Location tab
-		locationTab.click();
+		this.locationTab.click();
 	}
-	public void enterAddress() {
+	public void enterAddress(String address) {
 		//Enter valid credentials in Address textbox - yeshwanthapur
-		address.sendKeys("yeshwanthapur");
+		this.address.sendKeys(address);
 	}
-	public void enterGMapsAddress() {
+	public void enterGMapsAddress(String gmaps) {
 		//Enter valid credentials in Google Maps Address textbox - yeshwanthapur
-		gmaps.sendKeys("yeshwanthapur");
+		this.gmaps.sendKeys(gmaps);
 	}
-	public void enterLatitude() {
+	public void enterLatitude(int lat) {
 		//Enter valid credentials in Latitude textbox - 120
-		int lat = 120;
-		latitude.sendKeys(String.valueOf(lat));
+		this.latitude.sendKeys(String.valueOf(lat));
 	}
-	public void enterLongitude() {
+	public void enterLongitude(int lo) {
 		//Enter valid credentials in Longitude textbox - 56
-		int lo = 56;
-		longitude.sendKeys(String.valueOf(lo));
+		this.longitude.sendKeys(String.valueOf(lo));
 	}
 	public void clickDetailsTab() {
 		//Click on Details tab
-		details.click();
+		this.details.click();
 	}
-	public void enterStorageRoom() {
+	public void enterStorageRoom(int st) {
 		//Enter valid credentials in Storage Room textbox - 2
-		int st = 2;
-		storage.sendKeys(String.valueOf(st));
+		this.storage.sendKeys(String.valueOf(st));
 	}
 	public void clickCheckbox() {
 		//Click on Central Bangalore Checkbox
-		checkbox.click();
+		this.checkbox.click();
 	}
 	public void clickFeaturesCheckbox() throws AWTException {
 		//Click on checkbox beside  Feature of Features section
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_PAGE_UP);
-		robot.keyRelease(KeyEvent.VK_PAGE_UP);
-
-		featureChkbox.click();
+		this.featureChkbox.click();
 	}
 	public void clickRegionsCheckbox() {
 		//Click on checkbox beside Region of Regions section
-		regionChkbox.click();
+		this.regionChkbox.click();
 	}
 	public void clickPublish() {
 		//Click on Publish button
-		publish.click();
+		this.publish.click();
 	}
 	
 	public String confirmationMessage() {

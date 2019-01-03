@@ -61,25 +61,24 @@ public class Test042_POM {
 		
 	public void clickPosts() {
 		//click on Posts link
-		posts.click();	
+		this.posts.click();	
 	}
 	public void clickAddNew() {
 		//click on 'Add New' button next to Posts
-		addNew.click();
+		this.addNew.click();
 	}
-	public void enterTitle() {
+	public void enterTitle(String title) {
 		//Enter Valid credentials in Enter title here textbox - New Launches3456
-		title.sendKeys("New Launches_Dec28_4");
+		this.title.sendKeys(title);
 	}
-	public void enterBodyText() {
+	public void enterBodyText(String bodyText) {
 		//Enter valid credentials in body textbox - New Launch in Home3456
 		text.click();
-		bodyText.sendKeys("New Launch in Home");	
+		this.bodyText.sendKeys(bodyText);	
 	}
 	public void clickPublish() throws InterruptedException {
 		//Click on Publish button
 		publish.click();
-		//Thread.sleep(7000);
 	}
 	public void clickAllPosts() {
 		//Click on All Posts

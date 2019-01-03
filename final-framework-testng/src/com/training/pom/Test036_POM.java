@@ -63,56 +63,49 @@ public class Test036_POM {
 		
 	public void clickVillas() {
 		//click on Villas link
-		villas.click();	
+		this.villas.click();	
 	}
 	public void enterSearchText() throws InterruptedException {
 		//click on Search box(right-most) and enter Nullam hendrerit apartment
-		searchBox.click();
+		this.searchBox.click();
 		Thread.sleep(2000);
-		searchBox.sendKeys("Nullam hendrerit apartment");
+		this.searchBox.sendKeys("Nullam hendrerit apartment");
 	}
 	public void clickProperty() {
 		//click on the property "Nullam hendrerit apartment" link
-		property.click();
+		this.property.click();
 	}
 	public void clickDropUsALine() throws InterruptedException {
 		//switch back to first tab and click on Drop Us A line button
 		ArrayList<String>  wins=new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(wins.get(0));
 		Thread.sleep(4000);
-		//Actions action= new Actions(driver);
-		//action.keyDown(Keys.CONTROL).sendKeys(Keys.TAB).build().perform();
-		//Actions action= new Actions(driver);
-		//action.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).sendKeys(Keys.TAB).build().perform();
 		
-		dropUsALine.click();
+		this.dropUsALine.click();
 	}
-	public void enterName() {
+	public void enterName(String name) {
 		//enter name in the name textbox of contact form
-		name.sendKeys("selenium");	
+		this.name.sendKeys(name);	
 	}
-	public void enterEmailAddress() {
+	public void enterEmailAddress(String emailAddress) {
 		//Enter email address in textbox
-		emailAddress.sendKeys("selenium@gmail.com");	
+		this.emailAddress.sendKeys(emailAddress);	
 	}
-	public void enterSubject() {
+	public void enterSubject(String subject) {
 		//Enter Subject
-		subject.sendKeys("apartment");	
+		this.subject.sendKeys(subject);	
 	}
-	public void enterMessage() {
+	public void enterMessage(String message) {
 		//Enter Message
-		message.sendKeys("looking for apartment");	
+		this.message.sendKeys(message);	
 	}
 	public void clickSubmit() {
 		//Click on submit button
-		submit.click();	
+		this.submit.click();	
 	}
 	public String confirmationMessage() throws AWTException {
 		// get the text of the message displayed after clicking the submit button
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-
+		
 		String expected = confirmationMessage.getText();	
 		return expected;	
 	}
