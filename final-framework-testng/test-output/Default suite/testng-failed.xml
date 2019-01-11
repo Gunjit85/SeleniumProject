@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_048_Test">
+      <class name="com.training.regression.tests.RETC_089_Test">
         <methods>
+          <include name="tearDown"/>
           <include name="setUpBeforeClass"/>
-          <include name="addedPostDisplayedTest"/>
+          <include name="multiplePropsRegionsTest" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_048_Test -->
+      </class> <!-- com.training.regression.tests.RETC_089_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -23,7 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ApachePOIExcelRead {
 
 	// List<Object[]> -> List<List<Object>>
-	public static List<List<Object>> getExcelContent(String fileName) {
+	public static List<List<Object>> getExcelContent(String fileName, String sheetName) {
 		List<List<Object>> list = new ArrayList<List<Object>>();
 		try {
 			System.out.println("File Name  Got " + fileName);
@@ -33,10 +33,12 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			//XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheet(sheetName);
 
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
+			
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
 				// For each row, iterate through all the columns
@@ -72,10 +74,11 @@ public class ApachePOIExcelRead {
 	
 	
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
+		String fileName = "C:/Users/IBM_ADMIN/git/Selenium_Framework/final-framework-testng/resources/TestData.xlsx";
+		String sheetName = "";
 
-		for (List<Object> temp : getExcelContent(fileName)) {
-			System.out.println(temp.get(0) + ", " + temp.get(1));
+		for (List<Object> temp : getExcelContent(fileName,sheetName)) {
+			System.out.println(temp.get(0) + ", " + temp.get(1)+", "+temp.get(2) + ", " + temp.get(3)+", "+temp.get(4) + ", " + temp.get(5)+", "+ temp.get(6));
 		}
 	}
 }

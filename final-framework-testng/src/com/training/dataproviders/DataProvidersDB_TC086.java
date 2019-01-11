@@ -1,3 +1,6 @@
+/* Test case RETC086 - To Verify whether application allows admin to Add New Region in the application & 
+ * added details should get displayed in database */
+
 package com.training.dataproviders;
 
 import java.util.List;
@@ -5,26 +8,28 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 import com.training.bean.LoginBean;
+import com.training.bean.TC086_LoginBean;
 import com.training.dao.ELearningDAO;
+import com.training.dao.RealEstateDAO;
 import com.training.readexcel.ApachePOIExcelRead;
 
-public class LoginDataProviders {
+public class DataProvidersDB_TC086 {
 
 	@DataProvider(name = "db-inputs")
 	public Object [][] getDBData() {
 
-		List<LoginBean> list = new ELearningDAO().getLogins(); 
+		List<TC086_LoginBean> list = new RealEstateDAO().getRegions(); 
 		
 		Object[][] result = new Object[list.size()][]; 
 		int count = 0; 
-		for(LoginBean temp : list){
-			Object[]  obj = new Object[2]; 
-			obj[0] = temp.getUserName(); 
-			obj[1] = temp.getPassword(); 
+		for(TC086_LoginBean temp : list){
+			Object[]  obj = new Object[3]; 
+			obj[0] = temp.getRegionName(); 
+			obj[1] = temp.getSlugName();
+			obj[2] = temp.getDescription();
 			
 			result[count ++] = obj; 
 		}
-		
 		
 		return result;
 	}

@@ -1,25 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="97934" started-at="2019-01-03T10:12:40Z" finished-at="2019-01-03T10:14:18Z">
+  <suite name="Default suite" duration-ms="107902" started-at="2019-01-11T10:27:31Z" finished-at="2019-01-11T10:29:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="97934" started-at="2019-01-03T10:12:40Z" finished-at="2019-01-03T10:14:18Z">
-      <class name="com.training.sanity.tests.RETC_048_Test">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="setUpBeforeClass" is-config="true" duration-ms="31850" started-at="2019-01-03T15:42:40Z" finished-at="2019-01-03T15:43:12Z">
+    <test name="Default test" duration-ms="107902" started-at="2019-01-11T10:27:31Z" finished-at="2019-01-11T10:29:19Z">
+      <class name="com.training.regression.tests.RETC_090_Test">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="setUpBeforeClass" is-config="true" duration-ms="21761" started-at="2019-01-11T15:57:31Z" finished-at="2019-01-11T15:57:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="adminLoginTest()[pri:1, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="adminLoginTest" duration-ms="12183" started-at="2019-01-03T15:43:12Z" finished-at="2019-01-03T15:43:24Z">
+        <test-method status="PASS" signature="adminLoginTest()[pri:1, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="adminLoginTest" duration-ms="9160" started-at="2019-01-11T15:57:53Z" finished-at="2019-01-11T15:58:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminLoginTest -->
-        <test-method status="PASS" signature="addedPostDisplayedTest()[pri:2, instance:com.training.sanity.tests.RETC_048_Test@1b604f19]" name="addedPostDisplayedTest" duration-ms="53861" started-at="2019-01-03T15:43:24Z" finished-at="2019-01-03T15:44:18Z">
+        <test-method status="PASS" signature="addMultiplePropWithAllDetailsTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="addMultiplePropWithAllDetailsTest" duration-ms="29962" started-at="2019-01-11T15:58:02Z" data-provider="excel-inputs" finished-at="2019-01-11T15:58:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[shantiniketan8766]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[flat]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[80000.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[4000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[New]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Horamavu]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ready to occupy]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Horamavu]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Horamavu]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[125.0]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[13.0]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[2.0]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addedPostDisplayedTest -->
-      </class> <!-- com.training.sanity.tests.RETC_048_Test -->
+        </test-method> <!-- addMultiplePropWithAllDetailsTest -->
+        <test-method status="PASS" signature="addMultiplePropWithAllDetailsTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="addMultiplePropWithAllDetailsTest" duration-ms="21399" started-at="2019-01-11T15:58:32Z" data-provider="excel-inputs" finished-at="2019-01-11T15:58:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[crdenza8766]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[best]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30000.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Building]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Indiranagar]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[pre launch]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Indiranagar]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Indiranagar]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[135.0]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[57.0]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[3.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMultiplePropWithAllDetailsTest -->
+        <test-method status="PASS" signature="addMultiplePropWithAllDetailsTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="addMultiplePropWithAllDetailsTest" duration-ms="22948" started-at="2019-01-11T15:58:54Z" data-provider="excel-inputs" finished-at="2019-01-11T15:59:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gateway8766]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[orion mall]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[50000.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[progress]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Jayanagar]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1 month later]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Jayanagar]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Jayanagar]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[146.0]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[35.0]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[4.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMultiplePropWithAllDetailsTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.regression.tests.RETC_090_Test@1b604f19]" name="tearDown" is-config="true" duration-ms="1959" started-at="2019-01-11T15:59:17Z" finished-at="2019-01-11T15:59:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.regression.tests.RETC_090_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
